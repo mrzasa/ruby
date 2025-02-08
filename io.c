@@ -638,6 +638,8 @@ io_unread(rb_io_t *fptr, bool discard_rbuf)
     char *buf;
 
     rb_io_check_closed(fptr);
+    fptr->cbuf.off = 0;
+    fptr->cbuf.len = 0;
     if (fptr->rbuf.len == 0 || fptr->mode & FMODE_DUPLEX) {
         return;
     }
