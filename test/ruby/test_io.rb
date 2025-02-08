@@ -1884,7 +1884,7 @@ class TestIO < Test::Unit::TestCase
     assert_equal(pid1, pid2)
   end
 
-  def make_tempfile(encoding:)
+  def make_tempfile(encoding: nil)
     t = Tempfile.new("test_io", encoding:)
     t.binmode
     t.puts "foo"
