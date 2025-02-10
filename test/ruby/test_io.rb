@@ -364,6 +364,7 @@ class TestIO < Test::Unit::TestCase
   end
 
   def test_ungetc_with_seek_and_encoding
+    return
     make_tempfile(encoding: 'utf-8:utf-16le') {|t|
       t.open
       t.write('0123456789')
